@@ -1,0 +1,74 @@
+body{
+    margin:0;
+    padding:0;
+    text-align:left;
+    font-size: 32px;
+    width:100%;
+}
+
+h1{
+    color:white;
+    font-size: 100%;
+}
+main{
+    width:100%;
+    display: block;
+    position:relative;
+}
+
+p{
+    color: white;
+    font-size:100%;
+    text-align: center;
+    /* border-bottom:1px solid #fff; */
+}
+
+
+
+/* 選択肢 */
+.SelectBox {
+    margin-bottom: 40px;
+}
+
+.Question {
+    color: white;
+    margin-left:  35%;
+}
+
+#Explain {
+    font-size: 18px;
+    margin-left: 10%;
+    width: 30%;
+    color: white;
+    background-color:rgba(0,0,0,0);
+}
+
+
+/* ボタン */
+
+#next {
+    margin-left: 40%;
+}
+
+.janken__btns {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  
+.btn {
+    text-align: center;
+    font-size: 2.4rem;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+    width: 100%;
+    padding: 0.5em 1em;
+    background-color: transparent;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+
+  .btn--light-side {
+    color: #ebcd29;
+    background-color: rgba(214, 224, 129, 0.123);
+    -webkit-box-shadow: 1px -1px 3px 1px #c5c56f inset, -1px 1px 3px 1px #c5c56f inset;
+            box-shadow: 1px -1px 3px 1px #c5c56f inset, -1px 1px 3px 1px #c5c56f inset;
+  }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>myMemoPad</title>
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="jquery-starfield/dist/jquery-starfield.js"></script>
+
+<link rel="stylesheet" href="css/sample.css">
+</head>
+<body>
+<div id="starfield">
+<main>
+    <p style="margin-top: 100px;">ウルトラ怪獣診断 ~β~</p>
+        <p>
+        <label>あなたのお名前:</label>
+        <input type="text" id="Name"size="20" maxlength="80">
+        </p> 
+            <div class=SelectBox>
+                    <div class="QuestionText">
+                        <p>目の前に怪獣が現れた！！次に取る行動は。。。<br></p>
+                    </div>
+                    <div class="Question">
+                        <input type="radio" name="CountUp" id="strong_1" value=1><label for="strong_1">　地球の平和のためにたたかう</label><br>
+                        <input type="radio" name="CountUp" id="usual_1" value=2><label for="usual_1">　助けを呼ぶ</label><br>
+                        <input type="radio" name="CountUp" id="strong_1" value=3><label for="strong_1">　３分間は様子を見る。</label><br>
+                        <div class="Janken__btns">
+                    </div>
+                </div>
+            </div>
+            <div id="next"><a href="select02.html" class="btn btn--light-side">次に進む</a></div>    
+</main>
+</div>
+<script>
+// Starwars背景
+$(function(){
+    $('#starfield').starfield();
+});
+//次に進む
+$("#next").on("click",function(){
+    const name = $("#Name").val();    
+    const radio = $('input:radio[name="CountUp"]:checked').val();
+    localStorage.setItem("Name",name);   
+    localStorage.setItem("CountUp",radio);
+});
+
+//2.clear クリックイベント
+// $("#clear").on("click", function(){
+//     localStorage.removeItem("");
+//     alert("クリアしました");
+// });
+
+
+</script>
+<!-- <footer><small>G's</small></footer> -->
+</body>
+</html>
