@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myMemoPad</title>
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="jquery-starfield/dist/jquery-starfield.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+</head>
+<body>
+<div id="starfield">
+<main>
+    <p style="margin-top: 100px;">ウルトラ診断 ~β~</p>
+            <div class=SelectBox>
+                    <div class="QuestionText">
+                        <p>あと３分間であなたの寿命がつきます。やることは？<br></p>
+                    </div>
+                    <div class="Question">
+                        <input type="radio" name="CountUp" id="strong_1" value=1><label for="strong_1">　G'sの課題に最後まで悩まされる</label><br>
+                        <input type="radio" name="CountUp" id="usual_1" value=2><label for="usual_1">　カップラーメンを食べる</label><br>
+                        <input type="radio" name="CountUp" id="strong_1" value=3><label for="strong_1">　坐して死を待つ</label><br>
+                        <div class="Janken__btns">
+                    </div>
+                </div>
+            </div>
+            <div id="next"><a href="select03.html" class="btn btn--light-side">次に進む</a></div>    
+</main>
+</div>
+<script>
+// Starwars背景
+$(function(){
+	$('#starfield').starfield();
+});
+
+//次に進むボタン Keyの値を取り出して点数計算
+$("#next").on("click",function(){
+    //選択された値   
+    const radio = $('input:radio[name="CountUp"]:checked').val();
+    //ローカルストレージから値を取得
+    var CountUp = localStorage.getItem("CountUp");
+    //整数型に変換
+    var CountUpInt = Number.parseInt(CountUp);
+    var radioInt = Number.parseInt(radio);
+    //計算後に再度ストレージに保存
+    CountTotal = CountUpInt + radioInt;
+    localStorage.setItem("CountUp",CountTotal);
+});
+
+
+
+
+//2.clear クリックイベント
+// $("#clear").on("click", function(){
+//     localStorage.removeItem("");
+//     alert("クリアしました");
+// });
+
+
+</script>
+<!-- <footer><small>G's</small></footer> -->
+</body>
+</html>

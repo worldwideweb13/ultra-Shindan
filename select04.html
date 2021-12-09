@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myMemoPad</title>
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="jquery-starfield/dist/jquery-starfield.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+</head>
+<body>
+<div id="starfield">
+<main>
+    <p style="margin-top: 100px;">ウルトラ診断 ~β~</p>
+            <div class=SelectBox>
+                    <div class="QuestionText">
+                        <p>診断結果</p>
+                        <p id="UserName"></p>
+                        <p id = "Answer"></p>
+                    </div>
+                    <div class="Question">
+                        <textarea name="" id="Explain" cols="30" rows="10""></textarea>
+                        <div class="Janken__btns">
+                    </div>
+                </div>
+            </div>
+            <div id="next"><a href="index.html" class="btn btn--light-side">もう一度チャレンジ</a></div>    
+</main>
+</div>
+<script>
+// Starwars背景
+$(function(){
+	$('#starfield').starfield();
+});
+
+
+$(document).ready(function(){
+    var OutCome = document.getElementById("Answer");
+    var Explain = document.getElementById("Explain");
+    var CountUp = localStorage.getItem("CountUp");
+    // 名前・結果を取得して表示
+    var Name = localStorage.getItem("Name");
+    document.getElementById("UserName").innerHTML = Name+" さんは";  
+    var OutComeInt = Number.parseInt(CountUp);
+    if(OutComeInt<=4){
+        OutCome.innerHTML = "ウルトラマン　です。";
+        Explain.innerHTML = "あなたは正真正銘。王道のウルトラマンです！生真面目過ぎてちょっと面白味がないかも。。";
+    }else if(OutComeInt<=7) {
+        OutCome.innerHTML = "ウルトラマンコスモス　です。";
+        Explain.innerHTML = "優しい心を持つあなたはコスモスです！ウルトラマンなのに敵を倒さない、そんなユニークが売りのコスモス。あなたも個性に磨きをかけてください！";
+    }else if(OutComeInt<=9) {
+        OutCome.innerHTML = "レッドキング　です。";
+        Explain.innerHTML = "ジャイアニズム全開のあなたは暴れん坊のレッドキングです！ウルトラマンに収まらないあなた、GoingMyWayです！どこまでも突っ走っちゃってください！";
+    }
+});
+
+//次に進むボタン Keyの値を取り出して点数計算
+
+
+
+
+</script>
+<!-- <footer><small>G's</small></footer> -->
+</body>
+</html>
